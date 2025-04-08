@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RescueGuard - Accident Detection & Emergency Response</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="RescueGuard Logo">
+                <h1>RescueGuard</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="pages/profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="pages/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Your Lifesaving Guardian</h2>
+                    <p>Automatic accident detection and emergency response system that alerts authorities when you need help.</p>
+                    <button id="activateBtn" class="cta-button">Activate Protection</button>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/img/emergency-bg.png" alt="Emergency Response">
+                </div>
+            </section>
+
+            <section class="features-section">
+                <div class="feature-card">
+                    <i class="fas fa-car-crash"></i>
+                    <h3>Accident Detection</h3>
+                    <p>Uses sensors to detect collisions and other emergencies.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Emergency Alerts</h3>
+                    <p>Automatically notifies emergency services with your location.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Medical Profile</h3>
+                    <p>Shares critical medical information with responders.</p>
+                </div>
+            </section>
+
+            <section class="emergency-panel">
+                <h3>Emergency Status: <span id="emergencyStatus">Inactive</span></h3>
+                <div class="sensor-status">
+                    <div class="sensor">
+                        <i class="fas fa-microphone"></i>
+                        <span>Sound Detection: <span id="soundStatus">Ready</span></span>
+                    </div>
+                    <div class="sensor">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Motion Detection: <span id="motionStatus">Ready</span></span>
+                    </div>
+                    <div class="sensor">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Location Tracking: <span id="locationStatus">Ready</span></span>
+                    </div>
+                </div>
+                <button id="testEmergencyBtn" class="test-button">Test Emergency</button>
+                <button id="emergencyBtn" class="emergency-button">
+                    <i class="fas fa-bell"></i> Manual Emergency
+                </button>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>© 2023 RescueGuard. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Emergency Countdown Modal -->
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content">
+            <h2>EMERGENCY DETECTED!</h2>
+            <p>We've detected a possible accident. Emergency services will be notified in:</p>
+            <div id="countdown">10</div>
+            <p>If this is a false alarm, please cancel now.</p>
+            <button id="cancelEmergencyBtn">CANCEL</button>
+        </div>
+    </div>
+
+    <script src="assets/js/sensors.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/emergency.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RescueGuard - Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <img src="../assets/img/logo.png" alt="RescueGuard Logo">
+                <h1>RescueGuard <span class="role-badge">Admin</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin.html" class="active"><i class="fas fa-user-shield"></i> Admin</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content admin-dashboard">
+            <section class="admin-overview">
+                <h2><i class="fas fa-chart-pie"></i> System Overview</h2>
+                
+                <div class="overview-stats">
+                    <div class="stat-card wide">
+                        <div class="stat-header">
+                            <h3>Active Emergencies</h3>
+                            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> 12%</span>
+                        </div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-graph">
+                            <div class="graph-bar" style="height: 30%"></div>
+                            <div class="graph-bar" style="height: 45%"></div>
+                            <div class="graph-bar" style="height: 60%"></div>
+                            <div class="graph-bar" style="height: 80%"></div>
+                            <div class="graph-bar" style="height: 65%"></div>
+                            <div class="graph-bar" style="height: 40%"></div>
+                            <div class="graph-bar" style="height: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Registered Users</h3>
+                            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> 5%</span>
+                        </div>
+                        <div class="stat-value">1,842</div>
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Response Time</h3>
+                            <span class="stat-trend down"><i class="fas fa-arrow-down"></i> 8%</span>
+                        </div>
+                        <div class="stat-value">4.2 min</div>
+                        <div class="stat-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="system-management">
+                <h3><i class="fas fa-sliders-h"></i> System Management</h3>
+                
+                <div class="management-grid">
+                    <div class="management-card">
+                        <div class="management-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4>Hospital Network</h4>
+                        <p>Manage connected hospitals and their resources</p>
+                        <button class="management-btn">Configure</button>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Police Departments</h4>
+                        <p>Coordinate with local law enforcement agencies</p>
+                        <button class="management-btn">Configure</button>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h4>EMS Services</h4>
+                        <p>Manage ambulance services and response units</p>
+                        <button class="management-btn">Configure</button>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Alert Systems</h4>
+                        <p>Configure emergency notification protocols</p>
+                        <button class="management-btn">Configure</button>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h4>Sensors & Detection</h4>
+                        <p>Adjust accident detection sensitivity</p>
+                        <button class="management-btn">Configure</button>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Data & Analytics</h4>
+                        <p>View system reports and performance metrics</p>
+                        <button class="management-btn">Configure</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h3><i class="fas fa-list-alt"></i> Recent Activity</h3>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Vehicle collision detected</h4>
+                            <p>Main St & 5th Ave • 8 minutes ago</p>
+                        </div>
+                        <div class="activity-status">
+                            <span class="status responding">Responding</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>New user registered</h4>
+                            <p>Sarah Johnson • 15 minutes ago</p>
+                        </div>
+                        <div class="activity-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-hospital-user"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Hospital status updated</h4>
+                            <p>General Hospital - 5 beds available • 22 minutes ago</p>
+                        </div>
+                        <div class="activity-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>System settings changed</h4>
+                            <p>Detection sensitivity adjusted • 35 minutes ago</p>
+                        </div>
+                        <div class="activity-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Test alert initiated</h4>
+                            <p>By admin user • 1 hour ago</p>
+                        </div>
+                        <div class="activity-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>© 2023 RescueGuard. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
