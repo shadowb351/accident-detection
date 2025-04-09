@@ -4,203 +4,290 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RescueGuard - Hospital Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/hospital.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <div class="logo">
-                <img src="../assets/img/logo.png" alt="RescueGuard Logo">
-                <h1>RescueGuard <span class="role-badge">Hospital</span></h1>
+    <div class="hospital-container">
+        <!-- Sidebar Navigation -->
+        <aside class="hospital-sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/img/logo-white.png" alt="RescueGuard Logo">
+                <h2>RescueGuard</h2>
+                <p>Hospital Dashboard</p>
             </div>
-            <nav class="main-nav">
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="hospital.html" class="active"><i class="fas fa-hospital"></i> Hospital</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li>
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>User View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin.html">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Admin View</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="hospital.html">
+                            <i class="fas fa-hospital"></i>
+                            <span>Hospital View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="police.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Police View</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-        </header>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Doctor">
+                    <div>
+                        <h4>Dr. Sarah Johnson</h4>
+                        <p>Chief Medical Officer</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
 
-        <main class="main-content hospital-dashboard">
-            <section class="hospital-info">
-                <h2><i class="fas fa-hospital"></i> General Hospital</h2>
-                <p class="hospital-address">123 Medical Center Drive, Cityville, ST 12345</p>
-                
+        <!-- Main Content -->
+        <main class="hospital-main">
+            <header class="hospital-header">
+                <h1><i class="fas fa-hospital"></i> Hospital Dashboard</h1>
+                <div class="header-info">
+                    <div class="hospital-info">
+                        <h3>General Hospital</h3>
+                        <p>123 Medical Center Drive, Cityville</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="emergency-mode">
+                            <i class="fas fa-bell"></i>
+                            <span>Emergency Mode: Active</span>
+                        </div>
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Hospital Stats -->
                 <div class="hospital-stats">
                     <div class="stat-card">
-                        <div class="stat-value">12</div>
-                        <div class="stat-label">Active Alerts</div>
+                        <div class="stat-icon bg-primary">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Active Alerts</p>
+                            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> 18%</span>
+                        </div>
                     </div>
+
                     <div class="stat-card">
-                        <div class="stat-value">8</div>
-                        <div class="stat-label">Beds Available</div>
+                        <div class="stat-icon bg-success">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Beds Available</p>
+                            <span class="stat-trend down"><i class="fas fa-arrow-down"></i> 2%</span>
+                        </div>
                     </div>
+
                     <div class="stat-card">
-                        <div class="stat-value">4</div>
-                        <div class="stat-label">Doctors On Duty</div>
+                        <div class="stat-icon bg-warning">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4</h3>
+                            <p>Doctors On Duty</p>
+                            <span class="stat-trend neutral"><i class="fas fa-equals"></i></span>
+                        </div>
                     </div>
-                </div>
-            </section>
 
-            <section class="alerts-section">
-                <div class="section-header">
-                    <h3><i class="fas fa-bell"></i> Current Emergency Alerts</h3>
-                    <div class="filter-controls">
-                        <select id="alertFilter">
-                            <option value="all">All Alerts</option>
-                            <option value="critical">Critical</option>
-                            <option value="moderate">Moderate</option>
-                            <option value="minor">Minor</option>
-                        </select>
-                        <button class="refresh-btn"><i class="fas fa-sync-alt"></i></button>
-                    </div>
-                </div>
-                
-                <div class="alerts-grid">
-                    <div class="alert-card critical">
-                        <div class="alert-header">
-                            <div class="alert-priority">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Critical</span>
-                            </div>
-                            <div class="alert-time">5 min ago</div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-danger">
+                            <i class="fas fa-ambulance"></i>
                         </div>
-                        <div class="alert-content">
-                            <h4>Vehicle Collision - Multiple Injuries</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> 2.3 miles away • ETA: 8 min</p>
-                            <div class="patient-info">
-                                <p><strong>Patient:</strong> John Doe (35M)</p>
-                                <p><strong>Condition:</strong> Unconscious, possible internal bleeding</p>
-                                <p><strong>Blood Type:</strong> O+</p>
-                                <p><strong>Allergies:</strong> Penicillin</p>
-                            </div>
-                        </div>
-                        <div class="alert-actions">
-                            <button class="action-btn prepare">
-                                <i class="fas fa-procedures"></i> Prepare
-                            </button>
-                            <button class="action-btn contact">
-                                <i class="fas fa-phone"></i> Contact EMS
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="alert-card moderate">
-                        <div class="alert-header">
-                            <div class="alert-priority">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <span>Moderate</span>
-                            </div>
-                            <div class="alert-time">12 min ago</div>
-                        </div>
-                        <div class="alert-content">
-                            <h4>Fall Injury - Possible Fracture</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> 1.1 miles away • ETA: 5 min</p>
-                            <div class="patient-info">
-                                <p><strong>Patient:</strong> Sarah Johnson (68F)</p>
-                                <p><strong>Condition:</strong> Conscious, leg pain</p>
-                                <p><strong>Blood Type:</strong> A-</p>
-                                <p><strong>Conditions:</strong> Osteoporosis</p>
-                            </div>
-                        </div>
-                        <div class="alert-actions">
-                            <button class="action-btn prepare">
-                                <i class="fas fa-procedures"></i> Prepare
-                            </button>
-                            <button class="action-btn contact">
-                                <i class="fas fa-phone"></i> Contact EMS
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="alert-card minor">
-                        <div class="alert-header">
-                            <div class="alert-priority">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Minor</span>
-                            </div>
-                            <div class="alert-time">25 min ago</div>
-                        </div>
-                        <div class="alert-content">
-                            <h4>Automatic Fall Detection</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> 0.5 miles away • ETA: 3 min</p>
-                            <div class="patient-info">
-                                <p><strong>Patient:</strong> Robert Chen (72M)</p>
-                                <p><strong>Condition:</strong> Conscious, no visible injuries</p>
-                                <p><strong>Blood Type:</strong> AB+</p>
-                                <p><strong>Conditions:</strong> Hypertension</p>
-                            </div>
-                        </div>
-                        <div class="alert-actions">
-                            <button class="action-btn prepare">
-                                <i class="fas fa-procedures"></i> Prepare
-                            </button>
-                            <button class="action-btn contact">
-                                <i class="fas fa-phone"></i> Contact EMS
-                            </button>
+                        <div class="stat-info">
+                            <h3>6</h3>
+                            <p>Incoming Patients</p>
+                            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> 25%</span>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <section class="resources-section">
-                <h3><i class="fas fa-procedures"></i> Resource Management</h3>
-                
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <h4>Emergency Beds</h4>
-                        <div class="resource-status">
-                            <div class="resource-available">8 Available</div>
-                            <div class="resource-total">/ 24 Total</div>
+                <!-- Emergency Alerts Section -->
+                <section class="alerts-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-bell"></i> Emergency Alerts</h2>
+                        <div class="filter-controls">
+                            <select class="form-select">
+                                <option>All Alerts</option>
+                                <option>Critical</option>
+                                <option>Moderate</option>
+                                <option>Minor</option>
+                            </select>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 66%"></div>
-                        </div>
-                        <button class="update-btn">Update Availability</button>
                     </div>
-                    
-                    <div class="resource-card">
-                        <h4>Operating Rooms</h4>
-                        <div class="resource-status">
-                            <div class="resource-available">2 Available</div>
-                            <div class="resource-total">/ 4 Total</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
-                        </div>
-                        <button class="update-btn">Update Availability</button>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <h4>Medical Staff</h4>
-                        <div class="resource-status">
-                            <div class="resource-available">4 On Duty</div>
-                            <div class="resource-total">/ 12 Total</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 33%"></div>
-                        </div>
-                        <button class="update-btn">Update Availability</button>
-                    </div>
-                </div>
-            </section>
-        </main>
 
-        <footer class="app-footer">
-            <p>© 2023 RescueGuard. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
+                    <div class="alerts-grid">
+                        <div class="alert-card critical">
+                            <div class="alert-header">
+                                <div class="alert-priority">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Critical</span>
+                                </div>
+                                <div class="alert-time">5 min ago</div>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Vehicle Collision - Multiple Injuries</h3>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> 2.3 miles away • ETA: 8 min</p>
+                                <div class="patient-info">
+                                    <p><strong>Patient:</strong> John Doe (35M)</p>
+                                    <p><strong>Condition:</strong> Unconscious, possible internal bleeding</p>
+                                    <p><strong>Blood Type:</strong> O+</p>
+                                    <p><strong>Allergies:</strong> Penicillin</p>
+                                </div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-procedures"></i> Prepare Trauma Center
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-phone"></i> Contact EMS
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="alert-card moderate">
+                            <div class="alert-header">
+                                <div class="alert-priority">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <span>Moderate</span>
+                                </div>
+                                <div class="alert-time">12 min ago</div>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Fall Injury - Possible Fracture</h3>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> 1.1 miles away • ETA: 5 min</p>
+                                <div class="patient-info">
+                                    <p><strong>Patient:</strong> Sarah Johnson (68F)</p>
+                                    <p><strong>Condition:</strong> Conscious, leg pain</p>
+                                    <p><strong>Blood Type:</strong> A-</p>
+                                    <p><strong>Conditions:</strong> Osteoporosis</p>
+                                </div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="btn btn-warning">
+                                    <i class="fas fa-procedures"></i> Prepare Ortho
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-phone"></i> Contact EMS
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="alert-card minor">
+                            <div class="alert-header">
+                                <div class="alert-priority">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Minor</span>
+                                </div>
+                                <div class="alert-time">25 min ago</div>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Automatic Fall Detection</h3>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> 0.5 miles away • ETA: 3 min</p>
+                                <div class="patient-info">
+                                    <p><strong>Patient:</strong> Robert Chen (72M)</p>
+                                    <p><strong>Condition:</strong> Conscious, no visible injuries</p>
+                                    <p><strong>Blood Type:</strong> AB+</p>
+                                    <p><strong>Conditions:</strong> Hypertension</p>
+                                </div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="btn btn-info">
+                                    <i class="fas fa-procedures"></i> Prepare Exam Room
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-phone"></i> Contact EMS
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resource Management Section -->
+                <section class="resources-section">
+                    <h2><i class="fas fa-procedures"></i> Resource Management</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>Emergency Beds</h3>
+                            <div class="resource-status">
+                                <div class="resource-available">8 Available</div>
+                                <div class="resource-total">/ 24 Total</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 66%"></div>
+                            </div>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-edit"></i> Update Availability
+                            </button>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>Operating Rooms</h3>
+                            <div class="resource-status">
+                                <div class="resource-available">2 Available</div>
+                                <div class="resource-total">/ 4 Total</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-edit"></i> Update Availability
+                            </button>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>Medical Staff</h3>
+                            <div class="resource-status">
+                                <div class="resource-available">4 On Duty</div>
+                                <div class="resource-total">/ 12 Total</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 33%"></div>
+                            </div>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-edit"></i> Update Availability
+                            </button>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </footer>
+        </main>
     </div>
-
-    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>

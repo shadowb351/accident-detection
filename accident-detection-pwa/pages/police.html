@@ -4,238 +4,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RescueGuard - Police Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/police.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <div class="logo">
-                <img src="../assets/img/logo.png" alt="RescueGuard Logo">
-                <h1>RescueGuard <span class="role-badge">Police</span></h1>
+    <div class="police-container">
+        <!-- Sidebar Navigation -->
+        <aside class="police-sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/img/logo-white.png" alt="RescueGuard Logo">
+                <h2>RescueGuard</h2>
+                <p>Police Dashboard</p>
             </div>
-            <nav class="main-nav">
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="police.html" class="active"><i class="fas fa-shield-alt"></i> Police</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li>
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>User View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin.html">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Admin View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="hospital.html">
+                            <i class="fas fa-hospital"></i>
+                            <span>Hospital View</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="police.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Police View</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-        </header>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Officer">
+                    <div>
+                        <h4>Sgt. Mark Rodriguez</h4>
+                        <p>District 5 Command</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
 
-        <main class="main-content police-dashboard">
-            <section class="police-info">
-                <h2><i class="fas fa-shield-alt"></i> City Police Department</h2>
-                <p class="police-district">District 5 - Central Command</p>
-                
+        <!-- Main Content -->
+        <main class="police-main">
+            <header class="police-header">
+                <h1><i class="fas fa-shield-alt"></i> Police Dashboard</h1>
+                <div class="header-info">
+                    <div class="department-info">
+                        <h3>City Police Department</h3>
+                        <p>District 5 - Central Command</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="emergency-mode">
+                            <i class="fas fa-bell"></i>
+                            <span>Emergency Response: Active</span>
+                        </div>
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">7</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Police Stats -->
                 <div class="police-stats">
                     <div class="stat-card">
-                        <div class="stat-value">7</div>
-                        <div class="stat-label">Active Incidents</div>
+                        <div class="stat-icon bg-primary">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>7</h3>
+                            <p>Active Incidents</p>
+                            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> 15%</span>
+                        </div>
                     </div>
+
                     <div class="stat-card">
-                        <div class="stat-value">3</div>
-                        <div class="stat-label">Units Available</div>
+                        <div class="stat-icon bg-success">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>Units Available</p>
+                            <span class="stat-trend down"><i class="fas fa-arrow-down"></i> 10%</span>
+                        </div>
                     </div>
+
                     <div class="stat-card">
-                        <div class="stat-value">12</div>
-                        <div class="stat-label">Officers On Duty</div>
+                        <div class="stat-icon bg-warning">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Officers On Duty</p>
+                            <span class="stat-trend neutral"><i class="fas fa-equals"></i></span>
+                        </div>
                     </div>
-                </div>
-            </section>
 
-            <section class="incidents-section">
-                <div class="section-header">
-                    <h3><i class="fas fa-exclamation-triangle"></i> Active Incidents</h3>
-                    <div class="filter-controls">
-                        <select id="incidentFilter">
-                            <option value="all">All Incidents</option>
-                            <option value="critical">Critical</option>
-                            <option value="moderate">Moderate</option>
-                            <option value="minor">Minor</option>
-                        </select>
-                        <button class="refresh-btn"><i class="fas fa-sync-alt"></i></button>
-                    </div>
-                </div>
-                
-                <div class="incidents-grid">
-                    <div class="incident-card critical">
-                        <div class="incident-header">
-                            <div class="incident-priority">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Critical</span>
-                            </div>
-                            <div class="incident-time">8 min ago</div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-danger">
+                            <i class="fas fa-clock"></i>
                         </div>
-                        <div class="incident-content">
-                            <h4>Vehicle Collision - High Impact</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> Main St & 5th Ave • 1.7 miles away</p>
-                            <div class="incident-details">
-                                <p><strong>Reported by:</strong> Automatic Detection</p>
-                                <p><strong>Injuries:</strong> Multiple, possible fatalities</p>
-                                <p><strong>EMS Status:</strong> En route (ETA 4 min)</p>
-                                <p><strong>Traffic:</strong> Major congestion</p>
-                            </div>
-                        </div>
-                        <div class="incident-actions">
-                            <button class="action-btn dispatch">
-                                <i class="fas fa-car-side"></i> Dispatch Unit
-                            </button>
-                            <button class="action-btn coordinate">
-                                <i class="fas fa-ambulance"></i> Coordinate EMS
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="incident-card moderate">
-                        <div class="incident-header">
-                            <div class="incident-priority">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <span>Moderate</span>
-                            </div>
-                            <div class="incident-time">15 min ago</div>
-                        </div>
-                        <div class="incident-content">
-                            <h4>Pedestrian Accident</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> Oak St & Pine Ave • 0.8 miles away</p>
-                            <div class="incident-details">
-                                <p><strong>Reported by:</strong> Bystander (Jane Smith)</p>
-                                <p><strong>Injuries:</strong> 1 pedestrian, conscious</p>
-                                <p><strong>EMS Status:</strong> On scene</p>
-                                <p><strong>Traffic:</strong> Lane closure</p>
-                            </div>
-                        </div>
-                        <div class="incident-actions">
-                            <button class="action-btn dispatch">
-                                <i class="fas fa-car-side"></i> Dispatch Unit
-                            </button>
-                            <button class="action-btn coordinate">
-                                <i class="fas fa-ambulance"></i> Coordinate EMS
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="incident-card minor">
-                        <div class="incident-header">
-                            <div class="incident-priority">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Minor</span>
-                            </div>
-                            <div class="incident-time">22 min ago</div>
-                        </div>
-                        <div class="incident-content">
-                            <h4>Single Vehicle Crash</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> Highway 101, Exit 42 • 3.2 miles away</p>
-                            <div class="incident-details">
-                                <p><strong>Reported by:</strong> Driver (Robert Johnson)</p>
-                                <p><strong>Injuries:</strong> None reported</p>
-                                <p><strong>EMS Status:</strong> Not requested</p>
-                                <p><strong>Traffic:</strong> Shoulder blocked</p>
-                            </div>
-                        </div>
-                        <div class="incident-actions">
-                            <button class="action-btn dispatch">
-                                <i class="fas fa-car-side"></i> Dispatch Unit
-                            </button>
-                            <button class="action-btn coordinate">
-                                <i class="fas fa-ambulance"></i> Coordinate EMS
-                            </button>
+                        <div class="stat-info">
+                            <h3>5.2 min</h3>
+                            <p>Avg Response Time</p>
+                            <span class="stat-trend down"><i class="fas fa-arrow-down"></i> 7%</span>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <section class="units-section">
-                <h3><i class="fas fa-car-side"></i> Unit Dispatch</h3>
-                
-                <div class="units-grid">
-                    <div class="unit-card">
-                        <div class="unit-header">
-                            <h4>Patrol Unit 5A</h4>
-                            <span class="unit-status available">Available</span>
-                        </div>
-                        <div class="unit-details">
-                            <p><i class="fas fa-user"></i> Officer M. Rodriguez</p>
-                            <p><i class="fas fa-phone"></i> Radio: Channel 5</p>
-                            <p><i class="fas fa-map-marker-alt"></i> 1.2 miles from HQ</p>
-                        </div>
-                        <div class="unit-actions">
-                            <button class="action-btn assign">
-                                <i class="fas fa-tasks"></i> Assign Incident
-                            </button>
-                            <button class="action-btn contact">
-                                <i class="fas fa-walkie-talkie"></i> Contact
+                <!-- Incidents Section -->
+                <section class="incidents-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Active Incidents</h2>
+                        <div class="filter-controls">
+                            <select class="form-select">
+                                <option>All Incidents</option>
+                                <option>Critical</option>
+                                <option>Moderate</option>
+                                <option>Minor</option>
+                            </select>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-sync-alt"></i> Refresh
                             </button>
                         </div>
                     </div>
-                    
-                    <div class="unit-card">
-                        <div class="unit-header">
-                            <h4>Patrol Unit 3C</h4>
-                            <span class="unit-status assigned">Assigned</span>
-                        </div>
-                        <div class="unit-details">
-                            <p><i class="fas fa-user"></i> Officer J. Wilson</p>
-                            <p><i class="fas fa-phone"></i> Radio: Channel 3</p>
-                            <p><i class="fas fa-map-marker-alt"></i> En route to Main St accident</p>
-                        </div>
-                        <div class="unit-actions">
-                            <button class="action-btn assign">
-                                <i class="fas fa-tasks"></i> Reassign
-                            </button>
-                            <button class="action-btn contact">
-                                <i class="fas fa-walkie-talkie"></i> Contact
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="unit-card">
-                        <div class="unit-header">
-                            <h4>Traffic Unit 2B</h4>
-                            <span class="unit-status available">Available</span>
-                        </div>
-                        <div class="unit-details">
-                            <p><i class="fas fa-user"></i> Officer T. Chen</p>
-                            <p><i class="fas fa-phone"></i> Radio: Channel 2</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Near downtown precinct</p>
-                        </div>
-                        <div class="unit-actions">
-                            <button class="action-btn assign">
-                                <i class="fas fa-tasks"></i> Assign Incident
-                            </button>
-                            <button class="action-btn contact">
-                                <i class="fas fa-walkie-talkie"></i> Contact
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section class="map-section">
-                <h3><i class="fas fa-map-marked-alt"></i> Incident Map</h3>
-                <div class="map-container">
-                    <!-- In a real app, this would be a live map with incident markers -->
-                    <div class="map-placeholder">
-                        <i class="fas fa-map"></i>
-                        <p>Live map would display here with all active incidents and units</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+                    <div class="incidents-grid">
+                        <div class="incident-card critical">
+                            <div class="incident-header">
+                                <div class="incident-priority">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Critical</span>
+                                </div>
+                                <div class="incident-time">8 min ago</div>
+                            </div>
+                            <div class="incident-content">
+                                <h3>Vehicle Collision - High Impact</h3>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Main St & 5th Ave • 1.7 miles away</p>
+                                <div class="incident-details">
+                                    <p><strong>Reported by:</strong> Automatic Detection</p>
+                                    <p><strong>Injuries:</strong> Multiple, possible fatalities</p>
+                                    <p><strong>EMS Status:</strong> En route (ETA 4 min)</p>
+                                    <p><strong>Traffic:</strong> Major congestion</p>
+                                </div>
+                            </div>
+                            <div class="incident-actions">
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-car-side"></i> Dispatch Unit
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-ambulance"></i> Coordinate EMS
+                                </button>
+                            </div>
+                        </div>
 
-        <footer class="app-footer">
-            <p>© 2023 RescueGuard. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
+                        <div class="incident-card moderate">
+                            <div class="incident-header">
+                                <div class="incident-priority">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <span>Moderate</span>
+                                </div>
+                                <div class="incident-time">15 min ago</div>
+                            </div>
+                            <div class="incident-content">
+                                <h3>Pedestrian Accident</h3>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Oak St & Pine Ave • 0.8 miles away</p>
+                                <div class="incident-details">
+                                    <p><strong>Reported by:</strong> Bystander (Jane Smith)</p>
+                                    <p><strong>Injuries:</strong> 1 pedestrian, conscious</p>
+                                    <p><strong>EMS Status:</strong> On scene</p>
+                                    <p><strong>Traffic:</strong> Lane closure</p>
+                                </div>
+                            </div>
+                            <div class="incident-actions">
+                                <button class="btn btn-warning">
+                                    <i class="fas fa-car-side"></i> Dispatch Unit
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-ambulance"></i> Coordinate EMS
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="incident-card minor">
+                            <div class="incident-header">
+                                <div class="incident-priority">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Minor</span>
+                                </div>
+                                <div class="incident-time">22 min ago</div>
+                            </div>
+                            <div class="incident-content">
+                                <h3>Single Vehicle Crash</h3>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Highway 101, Exit 42 • 3.2 miles away</p>
+                                <div class="incident-details">
+                                    <p><strong>Reported by:</strong> Driver (Robert Johnson)</p>
+                                    <p><strong>Injuries:</strong> None reported</p>
+                                    <p><strong>EMS Status:</strong> Not requested</p>
+                                    <p><strong>Traffic:</strong> Shoulder blocked</p>
+                                </div>
+                            </div>
+                            <div class="incident-actions">
+                                <button class="btn btn-info">
+                                    <i class="fas fa-car-side"></i> Dispatch Unit
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-ambulance"></i> Coordinate EMS
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Unit Dispatch Section -->
+                <section class="units-section">
+                    <h2><i class="fas fa-car-side"></i> Unit Dispatch</h2>
+                    <div class="units-grid">
+                        <div class="unit-card">
+                            <div class="unit-header">
+                                <h3>Patrol Unit 5A</h3>
+                                <span class="unit-status available">Available</span>
+                            </div>
+                            <div class="unit-details">
+                                <p><i class="fas fa-user"></i> Officer M. Rodriguez</p>
+                                <p><i class="fas fa-phone"></i> Radio: Channel 5</p>
+                                <p><i class="fas fa-map-marker-alt"></i> 1.2 miles from HQ</p>
+                            </div>
+                            <div class="unit-actions">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-tasks"></i> Assign Incident
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-walkie-talkie"></i> Contact
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="unit-card">
+                            <div class="unit-header">
+                                <h3>Patrol Unit 3C</h3>
+                                <span class="unit-status assigned">Assigned</span>
+                            </div>
+                            <div class="unit-details">
+                                <p><i class="fas fa-user"></i> Officer J. Wilson</p>
+                                <p><i class="fas fa-phone"></i> Radio: Channel 3</p>
+                                <p><i class="fas fa-map-marker-alt"></i> En route to Main St accident</p>
+                            </div>
+                            <div class="unit-actions">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-tasks"></i> Reassign
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-walkie-talkie"></i> Contact
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="unit-card">
+                            <div class="unit-header">
+                                <h3>Traffic Unit 2B</h3>
+                                <span class="unit-status available">Available</span>
+                            </div>
+                            <div class="unit-details">
+                                <p><i class="fas fa-user"></i> Officer T. Chen</p>
+                                <p><i class="fas fa-phone"></i> Radio: Channel 2</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Near downtown precinct</p>
+                            </div>
+                            <div class="unit-actions">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-tasks"></i> Assign Incident
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-walkie-talkie"></i> Contact
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map Section -->
+                <section class="map-section">
+                    <h2><i class="fas fa-map-marked-alt"></i> Incident Map</h2>
+                    <div class="map-container">
+                        <!-- In a real app, this would be a live map with incident markers -->
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Live map would display here with all active incidents and units</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </footer>
+        </main>
     </div>
-
-    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>

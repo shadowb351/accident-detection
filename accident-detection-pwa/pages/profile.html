@@ -4,160 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RescueGuard - My Profile</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <div class="logo">
+    <div class="profile-container">
+        <!-- Sidebar Navigation -->
+        <aside class="profile-sidebar">
+            <div class="sidebar-header">
                 <img src="../assets/img/logo.png" alt="RescueGuard Logo">
-                <h1>RescueGuard</h1>
+                <h2>RescueGuard</h2>
             </div>
-            <nav class="main-nav">
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
-                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li>
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-        </header>
-
-        <main class="main-content profile">
-            <section class="profile-header">
-                <div class="profile-image">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Profile">
-                    <button class="edit-photo-btn"><i class="fas fa-camera"></i></button>
-                </div>
-                <div class="profile-info">
-                    <h2>John Doe</h2>
-                    <p class="member-since">Member since: January 2023</p>
-                    <div class="badges">
-                        <span class="badge verified"><i class="fas fa-check-circle"></i> Verified</span>
-                        <span class="badge premium"><i class="fas fa-crown"></i> Premium</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="profile-section">
-                <h3><i class="fas fa-id-card"></i> Personal Information</h3>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <label>Full Name</label>
-                        <p>John Michael Doe</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Date of Birth</label>
-                        <p>March 15, 1985</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Email</label>
-                        <p>john.doe@example.com <span class="verified-badge"><i class="fas fa-check-circle"></i></span></p>
-                    </div>
-                    <div class="info-item">
-                        <label>Phone</label>
-                        <p>+1 (555) 123-4567 <span class="verified-badge"><i class="fas fa-check-circle"></i></span></p>
-                    </div>
-                </div>
-                <button class="edit-info-btn">Edit Information</button>
-            </section>
-
-            <section class="profile-section">
-                <h3><i class="fas fa-heartbeat"></i> Medical Information</h3>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <label>Blood Type</label>
-                        <p>O+</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Allergies</label>
-                        <p>Penicillin, Peanuts</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Conditions</label>
-                        <p>Asthma, Hypertension</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Medications</label>
-                        <p>Albuterol, Lisinopril</p>
-                    </div>
-                </div>
-                <button class="edit-info-btn">Edit Medical Info</button>
-            </section>
-
-            <section class="profile-section emergency-contacts">
-                <h3><i class="fas fa-address-book"></i> Emergency Contacts</h3>
-                <div class="contacts-list">
-                    <div class="contact">
-                        <div class="contact-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Jane Doe</h4>
-                            <p>Spouse • +1 (555) 987-6543</p>
-                        </div>
-                        <div class="contact-actions">
-                            <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                            <button class="action-btn call"><i class="fas fa-phone"></i></button>
-                        </div>
-                    </div>
-                    <div class="contact">
-                        <div class="contact-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Dr. Sarah Smith</h4>
-                            <p>Primary Care • +1 (555) 456-7890</p>
-                        </div>
-                        <div class="contact-actions">
-                            <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                            <button class="action-btn call"><i class="fas fa-phone"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <button class="add-contact-btn">Add Emergency Contact</button>
-            </section>
-
-            <section class="profile-section account-settings">
-                <h3><i class="fas fa-user-cog"></i> Account Settings</h3>
-                <div class="settings-options">
-                    <button class="settings-btn">
-                        <i class="fas fa-lock"></i>
-                        <span>Change Password</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <button class="settings-btn">
-                        <i class="fas fa-bell"></i>
-                        <span>Notification Preferences</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <button class="settings-btn">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Privacy Settings</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <button class="settings-btn">
-                        <i class="fas fa-question-circle"></i>
-                        <span>Help & Support</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </section>
-        </main>
-
-        <footer class="app-footer">
-            <p>© 2023 RescueGuard. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
+            <div class="sidebar-footer">
+                <button class="btn btn-emergency">
+                    <i class="fas fa-bell"></i> Emergency
+                </button>
             </div>
-        </footer>
-    </div>
+        </aside>
 
-    <script src="../assets/js/auth.js"></script>
+        <!-- Main Content -->
+        <main class="profile-main">
+            <header class="profile-header">
+                <h1><i class="fas fa-user"></i> My Profile</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </header>
+
+            <div class="profile-content">
+                <!-- Profile Header Section -->
+                <section class="profile-info-section">
+                    <div class="profile-header-card">
+                        <div class="profile-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                            <button class="edit-photo-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <div class="profile-details">
+                            <h2>John Michael Doe</h2>
+                            <p class="member-since">Member since: January 2023</p>
+                            <div class="badges">
+                                <span class="badge verified"><i class="fas fa-check-circle"></i> Verified</span>
+                                <span class="badge premium"><i class="fas fa-crown"></i> Premium Member</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Personal Information Section -->
+                <section class="info-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-id-card"></i> Personal Information</h3>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Full Name</label>
+                            <p>John Michael Doe</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Date of Birth</label>
+                            <p>March 15, 1985</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Email</label>
+                            <p>john.doe@example.com <span class="verified-badge"><i class="fas fa-check-circle"></i></span></p>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone</label>
+                            <p>+1 (555) 123-4567 <span class="verified-badge"><i class="fas fa-check-circle"></i></span></p>
+                        </div>
+                        <div class="info-item">
+                            <label>Address</label>
+                            <p>123 Main Street, Apt 4B<br>Cityville, ST 12345</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Medical Information Section -->
+                <section class="info-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-heartbeat"></i> Medical Information</h3>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Blood Type</label>
+                            <p>O+</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Allergies</label>
+                            <p>Penicillin, Peanuts</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Medical Conditions</label>
+                            <p>Asthma, Hypertension</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Medications</label>
+                            <p>Albuterol, Lisinopril</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Primary Physician</label>
+                            <p>Dr. Sarah Smith<br>+1 (555) 987-6543</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Emergency Contacts Section -->
+                <section class="info-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-address-book"></i> Emergency Contacts</h3>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add Contact
+                        </button>
+                    </div>
+                    <div class="contacts-list">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Jane Doe</h4>
+                                <p>Spouse • +1 (555) 987-6543</p>
+                            </div>
+                            <div class="contact-actions">
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Mike Smith</h4>
+                                <p>Friend • +1 (555) 456-7890</p>
+                            </div>
+                            <div class="contact-actions">
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Dr. Sarah Smith</h4>
+                                <p>Primary Care • +1 (555) 123-4567</p>
+                            </div>
+                            <div class="contact-actions">
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Account Settings Section -->
+                <section class="info-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-user-cog"></i> Account Settings</h3>
+                    </div>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="setting-details">
+                                <h4>Change Password</h4>
+                                <p>Update your account password</p>
+                            </div>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="setting-details">
+                                <h4>Notification Preferences</h4>
+                                <p>Manage your notification settings</p>
+                            </div>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="setting-details">
+                                <h4>Privacy Settings</h4>
+                                <p>Control your data privacy</p>
+                            </div>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="setting-details">
+                                <h4>Help & Support</h4>
+                                <p>Get help with your account</p>
+                            </div>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
